@@ -3,7 +3,9 @@
 * 看Fragment生命周期图
 * 跑测试代码
 ## 一.Fragment生命周期图
-
+-------
+![Alt text](https://github.com/linylx/NotePad-master/blob/master/img/1.png)
+-------
 ## 二.测试相关代码
 ### 1.Navigation 底部导航
 ```java
@@ -291,18 +293,54 @@ public class MainActivity extends Fragment {
 ```
 
 ### 运行一下代码如图： 
+-------
+![Alt text](https://github.com/linylx/NotePad-master/blob/master/img/1.png)
+-------
 ### 首先我们看一下打印的log：
+-------
+![Alt text](https://github.com/linylx/NotePad-master/blob/master/img/1.png)
+-------
 ### 和开始我们贴的那张Fragment生命周期图符合
 ### 现在我们再来仔细看看这张图
-### 在Fragment生命周期中，如下方法会被系统回调
-    *onAttach()：当该Fragment添加到Activity时，被回调一次
-    *onCreate()：创建Fragment时被回调一次
-    *onCreateView()：每次创建绘制Fragment的View时都会回调
-    *onActivityCreated()：当Fragment所在的Activity启动时回调
-    *onStart()：启动Fragment时回调
-    *onResume()：恢复Fragment时回调 ps：在onStart()后一定会回调onResume()
-    *onPause()：暂停Fragment时回调
-    *onStop()：停止Fragment时回调
-    *onDestroyView()：销毁Fragment的View组件时回调
-    *onDestroy()：销毁Fragment时回调
-    *onDetach()：将Fragment从Activity中删除，替换完成时回调一次
+#### 在Fragment生命周期中，如下方法会被系统回调
+* onAttach()：当该Fragment添加到Activity时，被回调一次
+* onCreate()：创建Fragment时被回调一次
+* onCreateView()：每次创建绘制Fragment的View时都会回调
+* onActivityCreated()：当Fragment所在的Activity启动时回调
+* onStart()：启动Fragment时回调
+* onResume()：恢复Fragment时回调 ps：在onStart()后一定会回调onResume()
+* onPause()：暂停Fragment时回调
+* onStop()：停止Fragment时回调
+* onDestroyView()：销毁Fragment的View组件时回调
+* onDestroy()：销毁Fragment时回调
+* onDetach()：将Fragment从Activity中删除，替换完成时回调一次
+### 点击MainActivity的“启动一个activity”按钮
+### 我们看一下打印的log：
+-------
+![Alt text](https://github.com/linylx/NotePad-master/blob/master/img/1.png)
+-------
+### 关闭启动的activity
+### 我们看一下打印的log：
+-------
+![Alt text](https://github.com/linylx/NotePad-master/blob/master/img/1.png)
+-------
+### 在底部导航点击另一个界面,发现MainActivity并没有被暂停，原因是我们把其设置为了隐藏
+### 我们看一下打印的log：
+-------
+![Alt text](https://github.com/linylx/NotePad-master/blob/master/img/1.png)
+-------
+### 切换到手机的桌面,发现MainActivity和SendSign同时回调了onPause和onStop
+### 我们看一下打印的log：
+-------
+![Alt text](https://github.com/linylx/NotePad-master/blob/master/img/1.png)
+-------
+### 再次切回应用
+### 我们看一下打印的log：
+-------
+![Alt text](https://github.com/linylx/NotePad-master/blob/master/img/1.png)
+-------
+### 结束Fragment时
+### 我们看一下打印的log：
+-------
+![Alt text](https://github.com/linylx/NotePad-master/blob/master/img/1.png)
+-------
